@@ -6,6 +6,5 @@ module.exports = {
     }
   },
   transpileDependencies: ["quasar"],
-  publicPath:
-    process.env.NODE_ENV === "production" ? "satis_test/satis-test/" : "/"
+  publicPath: process.env.NODE_ENV === "production" ? "/satis-test/" : "/"
 };
