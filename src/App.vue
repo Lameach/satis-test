@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <q-layout view="hHh lpR fFf" class="page">
+    <q-header elevated class="bg-primary text-white">
+      <q-toolbar>
+        <q-toolbar-title>
+          Список сотрудников
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-header>
+
+    <q-page-container style="width: 650px">
+      <workers-list></workers-list>
+    </q-page-container>
+  </q-layout>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from "vue";
+import WorkersList from "./components/WorkersList.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: "LayoutDefault",
+
+  components: { WorkersList },
+
+  setup() {
+    return {
+      leftDrawerOpen: ref(false)
+    };
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.page {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
 }
 </style>
